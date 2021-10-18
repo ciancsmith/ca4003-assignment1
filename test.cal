@@ -1,0 +1,58 @@
+integer multiply (x:integer, y:integer)
+{
+var result:integer ;
+var minus sign:boolean ;
+
+if ( x < 0 && y >= 0 )
+{
+minus sign = true;
+x = −x ;
+}
+
+else
+{
+if y < 0 && x >= 0
+{
+minus sign = true ;
+y = −y ;
+}
+else
+{
+if ( x < 0 ) && y < 0
+{
+minus sign = false ;
+x = −x ;
+y = −y ;
+}
+else
+{
+minus sign = false ;
+}
+}
+}
+result = 0 ;
+while ( y > 0 )
+{
+result = result + x ;
+y = y − 1 ;
+}
+if minus sign == true
+{
+result = −result ;
+}
+else
+{
+skip ;
+}
+return ( result ) ;
+}
+main
+{
+var arg1 : integer ;
+var arg2 : integer ;
+var result : integer ;
+const five : integer = 5 ;
+arg1 = −6;
+arg2 = five ;
+result = multiply ( arg1 , arg2 ) ;
+}

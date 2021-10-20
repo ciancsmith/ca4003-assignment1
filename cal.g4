@@ -39,7 +39,7 @@ statement:              ID ASSIGNMENT expression SemiColon
                         | L_brace statement_block R_brace
                         | If condition L_brace statement_block R_brace Else L_brace statement_block R_brace
                         | While condition L_brace statement_block R_brace
-                        | Skip;
+                        | Skip SemiColon;
 
 expression:             frag binary_arith_op frag
                         | Lb expression Rb
@@ -78,11 +78,11 @@ nemp_arg_list:          ID
                         | ID Comma nemp_arg_list
                         ;
 
-empty_statement:         ;
+empty_statement:        ;
 
 empty_arg_list:         ;
 
-Variable:               V A R I A B L E;
+Variable:               V A R;
 Const:                  C O N S T ;
 Return:                 R E T U R N;
 Integer:                I N T E G E R;
@@ -123,7 +123,7 @@ PLUS:                   '+';
 ASSIGNMENT:             '=';
 NOT:                    '~';
 OR:                     '||';
-AND:                    '&';
+AND:                    '&&';
 EQUAL:                  '==';
 NOTEQUAL:               '!=';
 LT:                     '<';
